@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "592709871315",
+    "project_id": "cinemaproject-54869",
+    "storage_bucket": "cinemaproject-54869.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592709871315:android:9c33f79b89cf8012195626",
+        "android_client_info": {
+          "package_name": "com.mythesisapp.cinemaproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592709871315-5kd845r0coe77nl7t27dg0voiq9hd1di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_WCT_nesrj1sjir02tnmF4YC9L_Tc0NU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592709871315-5kd845r0coe77nl7t27dg0voiq9hd1di.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

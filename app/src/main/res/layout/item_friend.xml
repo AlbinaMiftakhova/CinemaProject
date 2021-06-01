@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="friend"
+            type="com.mythesisapp.cinemaproject.domain.friends.FriendEntity" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:divider="@drawable/contact_divider"
+        android:focusable="true"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgPhoto"
+            android:layout_width="@dimen/account_photo_dim"
+            android:layout_height="@dimen/account_photo_dim"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_account_circle"
+            app:profileImage="@{friend.image}" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgOnline"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"
+            android:layout_alignEnd="@+id/imgPhoto"
+            android:layout_alignBottom="@+id/imgPhoto"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:src="@color/colorPrimary"
+            app:lastSeen="@{friend.lastSeen}"/>
+
+        <LinearLayout
+            android:id="@+id/contact_name_and_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/removeContainer"
+            android:layout_toEndOf="@+id/imgPhoto"
+            android:layout_toRightOf="@+id/imgPhoto"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{friend.name}"
+                android:textSize="14sp"
+                tools:text="@string/name" />
+
+            <TextView
+                android:id="@+id/tvSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="14sp"
+                tools:text="@string/surname"
+                android:text="@{friend.surname}"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/removeContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true">
+
+            <FrameLayout
+                android:id="@+id/btnRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/rounded_button"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:tint="@color/white" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
